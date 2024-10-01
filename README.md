@@ -48,3 +48,10 @@ export default tseslint.config({
   },
 })
 ```
+
+## The Development process regarding in terms of workflows.
+```
+- We have the main branch, dev and QA.
+- this will how you create feature branch git checkout -b feature/your-feature
+- when you create a PR you do that on the dev branch first.
+```
