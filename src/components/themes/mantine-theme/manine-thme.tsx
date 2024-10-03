@@ -9,13 +9,21 @@ const MantineThemeComponent = ({ children }: { children: React.ReactNode }) => {
   });
 
   const toggleTheme = () => {
-    setColorTheme((current) => (current === "dark" ? "dark" : "light"));
+    setColorTheme((current) => (current === "dark" ? "light" : "dark"));
   };
 
   return (
     <MantineProvider defaultColorScheme={colorTheme}>
-      <div>
-        <button onClick={toggleTheme}>{children}</button>
+      <div
+        style={{
+          backgroundColor: colorTheme === "dark" ? "#333" : "#fff",
+          color: colorTheme === "dark" ? "#fff" : "#000",
+          padding: "2rem",
+          minHeight: "100vh",
+        }}
+      >
+        <button onClick={toggleTheme}>Toggle Theme</button>
+        {children}
       </div>
     </MantineProvider>
   );
